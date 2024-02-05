@@ -12,6 +12,8 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "HelloWorldSetup", "HelloWor
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "HelloWorldBootstrapper", "HelloWorldBootstrapper\HelloWorldBootstrapper.wixproj", "{E297ACE6-1214-41C5-B785-E05C3B91E1D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldCustomAction", "HelloWorldCustomAction\HelloWorldCustomAction.csproj", "{86196589-ADB0-4BEF-9019-04A87AEE4A7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,18 @@ Global
 		{E297ACE6-1214-41C5-B785-E05C3B91E1D6}.Release|x64.Build.0 = Release|x64
 		{E297ACE6-1214-41C5-B785-E05C3B91E1D6}.Release|x86.ActiveCfg = Release|x86
 		{E297ACE6-1214-41C5-B785-E05C3B91E1D6}.Release|x86.Build.0 = Release|x86
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|x64.Build.0 = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Debug|x86.Build.0 = Debug|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|x64.ActiveCfg = Release|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|x64.Build.0 = Release|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|x86.ActiveCfg = Release|Any CPU
+		{86196589-ADB0-4BEF-9019-04A87AEE4A7F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

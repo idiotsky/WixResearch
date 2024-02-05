@@ -23,12 +23,23 @@
     <CompilerAdditionalOptions>-arch x64</CompilerAdditionalOptions>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CustomActions.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="Directories.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="PreBuildEvent.bat" />
     <Content Include="Variables.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloWorldCustomAction\HelloWorldCustomAction.csproj">
+      <Name>HelloWorldCustomAction</Name>
+      <Project>{86196589-adb0-4bef-9019-04a87aee4a7f}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="..\Lib\Wix.targets" />

@@ -1,0 +1,28 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Property Id="CustomActionsFile" Value="1" />
+    <Binary Id="Bin_HelloWorldCA" SourceFile="$(var.HelloWorldCustomAction.TargetDir)HelloWorldCustomAction.CA.dll" />
+
+    <CustomAction Id="CA_SaveTargetDir" Property="ARPINSTALLLOCATION" Value="[INSTALLDIR]" />
+    <CustomAction Id="CA_WriteFile" DllEntry="WriteFileCustomAction" Execute="deferred" Return="check"
+                  BinaryKey="Bin_HelloWorldCA" />
+    <CustomAction Id="CA_CleanFile" DllEntry="CleanFileCustomAction" Execute="deferred" Return="check"
+                  BinaryKey="Bin_HelloWorldCA" />
+
+    <CustomAction Id="SetWriteFileProperty" Property="CA_WriteFile" Value="InstallDir=[INSTALLDIR]" />
+    <CustomAction Id="SetCleanFileProperty" Property="CA_CleanFile" Value="InstallDir=[INSTALLDIR]" />
+
+    <InstallExecuteSequence>
+      <Custom Action="CA_SaveTargetDir" After="InstallValidate" />
+      <Custom Action="SetWriteFileProperty" Before="CA_WriteFile" />
+      <Custom Action="SetCleanFileProperty" Before="CA_CleanFile" />
+      <Custom Action="CA_WriteFile" Before="InstallFinalize">
+        <![CDATA[NOT Installed]]>
+      </Custom>
+      <Custom Action="CA_CleanFile" Before="InstallFinalize">
+        <![CDATA[Installed AND NOT UPGRADINGPRODUCTCODE]]>
+      </Custom>
+
+    </InstallExecuteSequence>
+  </Fragment>
+</Wix>
