@@ -15,6 +15,7 @@
     <Content Include="Variables.wxi" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelloWorldCustomAction\HelloWorldCustomAction.csproj" />
     <ProjectReference Include="..\HelloWorld\HelloWorld.csproj" />
   </ItemGroup>  
 </Project>

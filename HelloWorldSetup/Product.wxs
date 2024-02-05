@@ -3,6 +3,7 @@
   <Package UpgradeCode="1c416ac9-204f-4368-86c5-413218d4240f" Name="$(ProductName)" Language="1033"
            Version="$(ProductVersion)" Manufacturer="$(ManufacturerName)" InstallerVersion="200"
            ProductCode="$(ProductId)">
+    <PropertyRef Id="CustomActionsFile" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <Feature Id="ProductFeature" Title="HelloWorldSetup" Level="1">
       <ComponentGroupRef Id="ProductComponents" />

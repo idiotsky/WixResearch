@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net40</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
