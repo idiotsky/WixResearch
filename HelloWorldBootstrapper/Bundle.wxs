@@ -1,0 +1,15 @@
+<?include Variables.wxi ?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Bundle Name="$(var.ProductName)" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)"
+          UpgradeCode="05d3a148-2aed-41aa-ad56-7cfe2d841642">
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+    <Chain>
+      <MsiPackage SourceFile="$(var.HelloWorldSetup.TargetDir)HelloWorldSetup.msi" ForcePerMachine="yes">
+        <MsiProperty Name="INSTALLDIR" Value="[InstallFolder]" />
+      </MsiPackage>
+    </Chain>
+    <Variable Name="InstallFolder" Type="string"
+              Value="[ProgramFiles64Folder]$(var.ManufacturerName)\$(var.ProductName)" />
+    <Variable Name="LaunchTarget" Value="[InstallFolder]\HelloWorld.exe" />
+  </Bundle>
+</Wix>

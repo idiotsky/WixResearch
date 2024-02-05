@@ -1,0 +1,13 @@
+﻿<?include Variables.wxi ?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="ManufactureDir" Name="$(var.ManufacturerName)">
+          <Directory Id="INSTALLDIR" Name="$(var.ProductName)">
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+</Wix>

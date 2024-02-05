@@ -1,0 +1,6 @@
+<Include xmlns="http://wixtoolset.org/schemas/v4/wxs"> 
+  <?ifndef ManufacturerName ?><?define ManufacturerName = "Fake Company" ?><?endif?> 
+  <?ifndef ProductVersion ?><?define ProductVersion = "1.0.0.0" ?><?endif?> 
+  <?define ProductId = "0E32901F-CD11-4A97-8041-5D8C79302012" ?>
+  <?define ProductName = "Hello World App" ?>
+</Include>
