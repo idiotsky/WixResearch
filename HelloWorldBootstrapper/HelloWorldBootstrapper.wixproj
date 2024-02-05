@@ -16,5 +16,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloWorldSetup\HelloWorldSetup.wixproj" />
-  </ItemGroup>  
+  </ItemGroup>
 </Project>

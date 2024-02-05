@@ -11,8 +11,7 @@
         <MsiProperty Name="INSTALLDIR" Value="[InstallFolder]" />
       </MsiPackage>
     </Chain>
-    <Variable Name="InstallFolder" Type="string"
-              Value="[ProgramFiles64Folder]$(ManufacturerName)\$(ProductName)" />
+    <Variable Name="InstallFolder" Type="string" Value="$(env.ProgramW6432)\$(ManufacturerName)\$(ProductName)" />
     <Variable Name="LaunchTarget" Value="[InstallFolder]\HelloWorld.exe" />
   </Bundle>
 </Wix>
