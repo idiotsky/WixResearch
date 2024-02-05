@@ -1,15 +1,18 @@
-<?include Variables.wxi ?>
+﻿<?include Variables.wxi ?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Bundle Name="$(var.ProductName)" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)"
+  <Bundle Name="$(ProductName)" Version="$(ProductVersion)" Manufacturer="$(ManufacturerName)"
           UpgradeCode="05d3a148-2aed-41aa-ad56-7cfe2d841642">
-    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+    <BootstrapperApplication>
+      <WixStandardBootstrapperApplication Theme="rtfLicense" LicenseFile="License.rtf"
+                                          xmlns="http://wixtoolset.org/schemas/v4/wxs/bal" />
+    </BootstrapperApplication>
     <Chain>
-      <MsiPackage SourceFile="$(var.HelloWorldSetup.TargetDir)HelloWorldSetup.msi" ForcePerMachine="yes">
+      <MsiPackage SourceFile="$(HelloWorldSetup.TargetDir)HelloWorldSetup.msi" ForcePerMachine="yes">
         <MsiProperty Name="INSTALLDIR" Value="[InstallFolder]" />
       </MsiPackage>
     </Chain>
     <Variable Name="InstallFolder" Type="string"
-              Value="[ProgramFiles64Folder]$(var.ManufacturerName)\$(var.ProductName)" />
+              Value="[ProgramFiles64Folder]$(ManufacturerName)\$(ProductName)" />
     <Variable Name="LaunchTarget" Value="[InstallFolder]\HelloWorld.exe" />
   </Bundle>
 </Wix>

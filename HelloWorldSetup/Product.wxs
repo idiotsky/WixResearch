@@ -1,21 +1,17 @@
-<?include Variables.wxi ?>
+﻿<?include Variables.wxi ?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Product Id="$(var.ProductId)" UpgradeCode="1c416ac9-204f-4368-86c5-413218d4240f" Name="$(var.ProductName)"
-           Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)">
-    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
-
+  <Package UpgradeCode="1c416ac9-204f-4368-86c5-413218d4240f" Name="$(ProductName)" Language="1033"
+           Version="$(ProductVersion)" Manufacturer="$(ManufacturerName)" InstallerVersion="200"
+           ProductCode="$(ProductId)">
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <MediaTemplate />
-
     <Feature Id="ProductFeature" Title="HelloWorldSetup" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
-  </Product>
-
+  </Package>
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
       <Component Id="CMP_HelloWorld.exe" Guid="1d0e0c43-332f-4829-ae47-00b4e3398f2f">
-        <File Id="FILE_HelloWorld.exe" KeyPath="yes" Source="$(var.SourceDir)HelloWorld.exe" />
+        <File Id="FILE_HelloWorld.exe" KeyPath="yes" Source="$(HelloWorld.TargetDir)HelloWorld.exe" />
       </Component>
     </ComponentGroup>
   </Fragment>
